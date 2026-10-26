@@ -29,7 +29,7 @@ collections:
               - { label: "Название", name: "title", widget: "string" }
               - { label: "Категория", name: "category", widget: "string", default: "Документ" }
               - { label: "Описание", name: "description", widget: "text", required: false }
-              - { label: "Подпись файла", name: "meta", widget: "string", required: false, hint: "Например: PDF, 1.8 МБ →" }
+              - { label: "Подпись файла", name: "meta", widget: "string", required: false, hint: "Например: PDF, 1.8 МБ. Стрелку добавлять не нужно." }
               - label: "Иконка"
                 name: "icon"
                 widget: "select"
