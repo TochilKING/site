@@ -233,11 +233,10 @@ ol {
 }
 
 .section-head {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
   align-items: end;
-  justify-content: space-between;
-  gap: var(--s-300);
+  gap: var(--s-400);
   margin-bottom: var(--s-600);
 }
 
@@ -255,7 +254,7 @@ ol {
   display: flex;
   flex-direction: column;
   gap: var(--s-100);
-  max-width: 680px;
+  max-width: 560px;
 }
 
 .lead {
@@ -305,6 +304,8 @@ ol {
   }
 
   .section-head {
+    grid-template-columns: 1fr;
+    gap: var(--s-200);
     margin-bottom: var(--s-500);
   }
 

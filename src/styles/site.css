@@ -280,7 +280,9 @@
   position: relative;
   justify-self: end;
   width: 100%;
-  max-width: 340px;
+  /* source portrait is 250x350, do not upscale past it */
+  max-width: 250px;
+  padding-bottom: var(--s-500);
 }
 
 .hero__portrait {
@@ -300,18 +302,20 @@
 
 .hero__badge {
   position: absolute;
-  right: var(--s-200);
-  bottom: calc(-1 * var(--s-300));
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
-  flex-direction: column;
-  gap: var(--s-25);
-  padding: var(--s-200);
+  align-items: baseline;
+  gap: var(--s-100);
+  padding: var(--s-100) var(--s-200);
   border: 1px solid var(--line);
   border-radius: var(--r-xl);
   background: var(--surface);
 }
 
 .hero__badge strong {
+  flex: none;
   font-size: var(--text-2xl);
   line-height: var(--lh-2xl);
   font-weight: 600;
@@ -322,6 +326,7 @@
   font-size: var(--text-xs);
   line-height: var(--lh-xs);
   color: var(--ink-3);
+  text-wrap: pretty;
 }
 
 @media (max-width: 900px) {
@@ -447,6 +452,11 @@
 /* Tagline reveal */
 .tagline {
   padding-block: var(--s-900);
+}
+
+/* keep the heading clear of the floating bar when jumping to a section */
+[id] {
+  scroll-margin-top: var(--s-900);
 }
 
 .tagline p {

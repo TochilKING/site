@@ -74,15 +74,20 @@ if (tagline) {
   if (!('IntersectionObserver' in window) || reduceMotion) {
     words.forEach((word) => word.classList.add('is-lit'));
   } else {
+    const order = new Map(Array.from(words).map((word, index) => [word, index]));
     const wordObserver = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add('is-lit');
-          wordObserver.unobserve(entry.target);
-        });
+        entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => order.get(a.target) - order.get(b.target))
+          .forEach((entry) => {
+            const index = order.get(entry.target);
+            entry.target.style.transitionDelay = `${Math.min(index * 45, 700)}ms`;
+            entry.target.classList.add('is-lit');
+            wordObserver.unobserve(entry.target);
+          });
       },
-      { rootMargin: '0px 0px -30% 0px', threshold: 0 },
+      { rootMargin: '0px 0px -60% 0px', threshold: 0 },
     );
     words.forEach((word) => wordObserver.observe(word));
   }

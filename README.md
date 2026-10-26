@@ -7,9 +7,9 @@
 
 ```bash
 npm install
-npm run dev      # http://localhost:4321/site
 npm run build    # сборка в dist/
-npm run preview  # локальный просмотр сборки
+npm run preview  # локальный просмотр сборки на http://127.0.0.1:4321/site/
+npm run dev      # dev-сервер Astro, http://localhost:4321/site
 ```
 
 ## Структура
@@ -51,6 +51,6 @@ GitHub Actions.
 
 ## Проверка сборки локально
 
-```bash
-python tools/preview_server.py 8123   # отдаёт dist/ по пути /site/
-```
+`npm run preview` поднимает `tools/preview_server.py`: он отдаёт `dist/` по пути `/site/`,
+как на GitHub Pages. Отдельный скрипт нужен потому, что `astro preview` в этом окружении
+слушает только IPv6 loopback.
