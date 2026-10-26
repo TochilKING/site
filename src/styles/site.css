@@ -454,11 +454,6 @@
   padding-block: var(--s-900);
 }
 
-/* keep the heading clear of the floating bar when jumping to a section */
-[id] {
-  scroll-margin-top: var(--s-900);
-}
-
 .tagline p {
   max-width: 680px;
   font-size: var(--text-4xl);

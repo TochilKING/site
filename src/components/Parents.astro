@@ -34,7 +34,7 @@ const items = visibleDocs(recommendations.items as Doc[]);
           </div>
           <h4>{item.title}</h4>
           <span class="doc__meta">
-            {item.meta?.replace('Рекомендации • ', '') ?? 'PDF'}
+            {item.meta?.replace('Рекомендации • ', '').replace(/\s*→\s*$/, '') ?? 'PDF'}
             <Icon name="arrow-up-right" size={14} />
           </span>
         </a>

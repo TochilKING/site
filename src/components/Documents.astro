@@ -106,7 +106,7 @@ const groups: {
                 </ul>
               )}
               <span class="doc__meta">
-                {item.meta ?? 'Открыть документ'}
+                {(item.meta ?? 'Открыть документ').replace(/\s*→\s*$/, '')}
                 <Icon name="arrow-up-right" size={14} />
               </span>
             </a>
