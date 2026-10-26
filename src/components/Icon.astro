@@ -1,0 +1,21 @@
+---
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+
+const { name, size = 24, weight = 'regular', class: className = '', ...rest } = Astro.props;
+const file = join(process.cwd(), 'node_modules/@phosphor-icons/core/assets', weight, `${name}.svg`);
+const raw = readFileSync(file, 'utf8');
+const path = raw.match(/<path[^>]*\/>/g)?.join('') ?? '';
+---
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 256 256"
+  width={size}
+  height={size}
+  fill="currentColor"
+  aria-hidden="true"
+  focusable="false"
+  class={className}
+  {...rest}
+  set:html={path}
+/>

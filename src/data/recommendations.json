@@ -1,0 +1,64 @@
+{
+  "items": [
+    {
+      "title": "Как одевать ребёнка ясельной группы весной",
+      "category": "Рекомендации",
+      "meta": "Рекомендации • PDF, 0.1 МБ",
+      "file": "./recomendation/Рекомендации - Как одевать ребёнка ясельной группы весной.pdf",
+      "icon": "t-shirt",
+      "color": "terracotta",
+      "order": 10,
+      "visible": true
+    },
+    {
+      "title": "Режим дня ребёнка ясельной группы весной",
+      "category": "Рекомендации",
+      "meta": "Рекомендации • PDF, 3.7 МБ",
+      "file": "./recomendation/Рекомендации - Режим дня ребёнка ясельной группы весной.pdf",
+      "icon": "clock",
+      "color": "sage",
+      "order": 20,
+      "visible": true
+    },
+    {
+      "title": "Какие сказки читать ребёнку",
+      "category": "Рекомендации",
+      "meta": "Рекомендации • PDF, 3.8 МБ",
+      "file": "./recomendation/Рекомендации - Какие сказки читать ребенку.pdf",
+      "icon": "book-open-text",
+      "color": "sage",
+      "order": 30,
+      "visible": true
+    },
+    {
+      "title": "Развивающие игры дома",
+      "category": "Рекомендации",
+      "meta": "Рекомендации • PDF, 3.9 МБ",
+      "file": "./recomendation/Рекомендации - Развивающие игры дома.pdf",
+      "icon": "puzzle-piece",
+      "color": "sun",
+      "order": 40,
+      "visible": true
+    },
+    {
+      "title": "Развитие эмоционального интеллекта в семье",
+      "category": "Рекомендации",
+      "meta": "Рекомендации • PDF, 3.9 МБ",
+      "file": "./recomendation/Рекомендации - Развитие эмоционального интеллекта в семье.pdf",
+      "icon": "brain",
+      "color": "clay",
+      "order": 50,
+      "visible": true
+    },
+    {
+      "title": "Чем кормить городских птиц",
+      "category": "Рекомендации",
+      "meta": "Рекомендации • PDF, 0.1 МБ",
+      "file": "./recomendation/Рекомендации - Чем кормить городских птиц.pdf",
+      "icon": "bird",
+      "color": "terracotta",
+      "order": 60,
+      "visible": true
+    }
+  ]
+}

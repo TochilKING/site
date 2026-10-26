@@ -1,0 +1,85 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Benefits from '../components/Benefits.astro';
+import Steps from '../components/Steps.astro';
+import Tagline from '../components/Tagline.astro';
+import Results from '../components/Results.astro';
+import Documents from '../components/Documents.astro';
+import Group from '../components/Group.astro';
+import Parents from '../components/Parents.astro';
+import Faq from '../components/Faq.astro';
+import Contact from '../components/Contact.astro';
+
+const title = 'Точилкина Ольга Сергеевна, воспитатель детского сада №1599 в Москве';
+const description =
+  'Портфолио воспитателя: подход к детям ясельного возраста, документы об образовании, сертификаты и динамика развития трёх учебных лет.';
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Что входит в портфолио',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Три документа об образовании, 21 сертификат и свидетельство, три отчёта по самообразованию, семь наград и благодарностей.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Как читать таблицы мониторинга',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Считается доля детей, у которых показатель выше 75 процентов, и сравниваются сентябрь и май. Прирост указан в процентных пунктах.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Почему в 2025 и 2026 итог ниже, чем в 2024',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Это разные группы: в 2024 дети занимались второй год, в 2025 и 2026 пришли новые наборы. Сравнивать нужно динамику внутри года.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Почему фотографии детей без имён',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Снимки размещены с письменного согласия родителей, лица обработаны, имена и даты рождения не публикуются.',
+      },
+    },
+  ],
+};
+
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Точилкина Ольга Сергеевна',
+  jobTitle: 'Воспитатель дошкольного образования',
+  worksFor: {
+    '@type': 'EducationalOrganization',
+    name: 'ФГБДОУ «Центр развития ребёнка, детский сад №1599»',
+    address: { '@type': 'PostalAddress', addressLocality: 'Москва', addressCountry: 'RU' },
+  },
+  image: 'https://tochilkina-os.github.io/site/img/photo_main.jpg',
+  url: 'https://tochilkina-os.github.io/site/',
+};
+---
+
+<Base title={title} description={description}>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(personJsonLd)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(faqJsonLd)} />
+  <Hero />
+  <Benefits />
+  <Steps />
+  <Tagline />
+  <Results />
+  <Documents />
+  <Group />
+  <Parents />
+  <Faq />
+  <Contact />
+</Base>

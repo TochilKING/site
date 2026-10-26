@@ -1,0 +1,92 @@
+---
+import Icon from './Icon.astro';
+import { base } from '../lib/data';
+
+const rooms = [
+  { file: '1000044638.jpg', alt: 'Игровая зона группы', caption: 'Игровая зона', span: 'gallery__cell' },
+  { file: '1000044639.jpg', alt: 'Развивающая среда группы', caption: 'Развивающая среда', span: 'gallery__cell' },
+  { file: '1000044640.jpg', alt: 'Материалы для занятий', caption: 'Материалы для занятий', span: 'gallery__cell' },
+  { file: '1000044643.jpg', alt: 'Общее пространство группы', caption: 'Пространство группы', span: 'gallery__cell' },
+  { file: '1000044641.jpg', alt: 'Уголок для спокойных игр', caption: 'Уголок для спокойных игр', span: 'gallery__cell' },
+  { file: '1000044642.jpg', alt: 'Зона самостоятельной деятельности', caption: 'Самостоятельная деятельность', span: 'gallery__cell' },
+  { file: '1000044644.jpg', alt: 'Игровые и учебные материалы', caption: 'Игровые материалы', span: 'gallery__cell' },
+  { file: '1000044645.jpg', alt: 'Оформление помещения группы', caption: 'Оформление', span: 'gallery__cell' },
+  { file: '1000044646.jpg', alt: 'Детское пространство группы', caption: 'Детское пространство', span: 'gallery__cell' },
+];
+
+const kids = [
+  'Group 59.png',
+  'Group 60.png',
+  'Group 61.png',
+  'Group 62.png',
+  'Group 63.png',
+  'Group 65.png',
+  'Group 67.png',
+  'Group 70.png',
+];
+---
+
+<section class="section section--sand" id="group">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-head__title">
+        <p class="eyebrow"><Icon name="house-line" size={18} /> Пространство</p>
+        <h2>Наша группа</h2>
+      </div>
+      <p>
+        Комната разделена на зоны так, чтобы ребёнок мог выбрать занятие сам: игры, рисование, спокойный уголок
+        с книгами.
+      </p>
+    </div>
+
+    <div class="gallery reveal">
+      {rooms.map((room) => (
+        <a
+          class={room.span}
+          href={`${base}/photos/group/${room.file}`}
+          target="_blank"
+          rel="noopener"
+          aria-label={`${room.caption}, открыть фото`}
+        >
+          <img
+            src={`${base}/photos/group/${room.file}`}
+            alt={room.alt}
+            width="1200"
+            height="900"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>{room.caption}</figcaption>
+        </a>
+      ))}
+    </div>
+
+    <div class="section-head section-head--sub reveal">
+      <div class="section-head__title">
+        <h3 class="h3-sm">Моменты из жизни группы</h3>
+      </div>
+      <p class="meta">Восемь кадров. Лица закрыты, имён и подписей нет.</p>
+    </div>
+
+    <div class="kids reveal">
+      {kids.map((file) => (
+        <a href={`${base}/photos/children_processed/${file}`} target="_blank" rel="noopener" aria-label="Открыть фото">
+          <img
+            src={`${base}/photos/children_processed/${file}`}
+            alt="Дети группы за игрой"
+            width="400"
+            height="400"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+      ))}
+    </div>
+
+    <p class="kids__note">
+      <Icon name="shield-check" size={16} />
+      Фотографии детей опубликованы с письменного согласия родителей. Имена, даты рождения и другие данные
+      не публикуются.
+    </p>
+  </div>
+</section>

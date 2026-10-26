@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { base } from '../lib/data';
+---
+
+<Base
+  title="Страница не найдена | Точилкина Ольга Сергеевна"
+  description="Такой страницы нет. Вернитесь на главную или откройте портфолио документов."
+  noindex
+>
+  <section class="page container">
+    <p class="eyebrow"><Icon name="map-pin" size={18} /> Ошибка 404</p>
+    <h1>Этой страницы нет</h1>
+    <p class="lead">
+      Возможно, ссылка устарела или в адресе опечатка. Ниже два пути: на главную или сразу к документам.
+    </p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href={`${base}/`}>
+        На главную
+        <Icon name="arrow-right" size={18} />
+      </a>
+      <a class="link-arrow" href={`${base}/#documents`}>
+        Открыть документы
+        <Icon name="arrow-right" size={16} />
+      </a>
+    </div>
+  </section>
+</Base>

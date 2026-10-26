@@ -1,0 +1,60 @@
+---
+import Icon from './Icon.astro';
+import { base } from '../lib/data';
+---
+
+<section class="hero" id="top">
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow">
+        <Icon name="leaf" size={18} />
+        Дошкольное образование, Москва
+      </p>
+      <h1>Дети уходят из яслей уверенными в себе</h1>
+      <p class="hero__lead">
+        Портфолио Ольги Точилкиной, воспитателя детского сада №1599. Здесь подход к детям, документы об образовании
+        и динамика трёх учебных лет: что изменилось у ребят и на чём основаны выводы.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#contact">
+          Написать мне
+          <Icon name="arrow-right" size={18} />
+        </a>
+        <a class="link-arrow" href="#documents">
+          Смотреть документы
+          <Icon name="arrow-right" size={16} />
+        </a>
+      </div>
+      <div class="hero__proof">
+        <div>
+          <strong>10 лет</strong>
+          <span>в дошкольном образовании</span>
+        </div>
+        <div>
+          <strong>40 детей</strong>
+          <span>в трёх группах за три года</span>
+        </div>
+        <div>
+          <strong>21 сертификат</strong>
+          <span>повышения квалификации</span>
+        </div>
+      </div>
+    </div>
+
+    <figure class="hero__figure">
+      <div class="hero__portrait">
+        <img
+          src={`${base}/img/photo_main.jpg`}
+          alt="Ольга Сергеевна Точилкина, воспитатель"
+          width="250"
+          height="350"
+          fetchpriority="high"
+        />
+      </div>
+      <figcaption class="hero__badge">
+        <strong>80%</strong>
+        <span>детей с показателями выше 75%,<br />группа «Ромашки», май 2024</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>

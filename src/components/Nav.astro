@@ -1,0 +1,48 @@
+---
+import Icon from './Icon.astro';
+
+type Link = { href: string; label: string };
+
+const { links, contactHref, topHref }: { links: Link[]; contactHref: string; topHref: string } = Astro.props;
+---
+
+<header class="nav" id="nav">
+  <div class="nav__bar">
+    <a class="nav__brand" href={topHref} aria-label="Ольга Точилкина, на главную">
+      <span class="nav__mark" aria-hidden="true">ОТ</span>
+      <span class="nav__name">Ольга Точилкина</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Разделы страницы">
+      {links.map((link) => (
+        <a href={link.href}>{link.label}</a>
+      ))}
+    </nav>
+
+    <a class="btn btn--primary btn--sm nav__cta" href={contactHref}>Написать мне</a>
+
+    <button
+      class="nav__toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      aria-label="Открыть меню"
+      data-nav-toggle
+    >
+      <span class="nav__toggle-line" aria-hidden="true"></span>
+      <span class="nav__toggle-line" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <div class="nav__panel" id="mobile-menu" data-nav-panel hidden>
+    <nav class="nav__panel-inner" aria-label="Мобильное меню">
+      {links.map((link) => (
+        <a href={link.href} data-nav-item>
+          {link.label}
+          <Icon name="arrow-right" size={20} />
+        </a>
+      ))}
+      <a class="btn btn--primary nav__panel-cta" href={contactHref} data-nav-item>Написать мне</a>
+    </nav>
+  </div>
+</header>

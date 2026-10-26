@@ -1,0 +1,28 @@
+# Continuity Ledger
+
+- Goal (incl. success criteria): Maintain and polish the professional portfolio website of Olga Sergeevna Tochilkina, preschool educator. Success is measured by a functional, visually stunning, luxury-minimalist interface with comprehensive educational and professional sections.
+- Constraints/Assumptions:
+    - Keep design clean and elegant.
+    - Fully responsive UI.
+    - Protect child privacy in images.
+    - Standard Russian language communication.
+    - Site is a showcase for attestation, not a conversion funnel: no competing calls to action.
+- Key decisions:
+    - Astro static build (base `/site`), GitHub Pages via Actions. No runtime framework on the client.
+    - One typeface (self-hosted Manrope), Phosphor inline SVG icons. No emoji as UI icons.
+    - Design system follows the `landing-page-design` skill: Tailwind type scale, fixed spacing steps, flat backgrounds, hero gradient only on the heading, motion on the shared cubic-bezier curve.
+    - Documents stay in `src/data/*.json`, edited through Decap CMS at `/admin/`.
+    - Child photos kept, but as a compact unnamed strip with a consent note.
+- State:
+    - Done: hero, approach, process, tagline reveal, results with year switcher, documents archive, group gallery, parents materials, FAQ, contact form, 404, privacy policy, SEO/OG/JSON-LD, favicon, sitemap, robots.
+    - Now: redesign branch ready for review; not pushed (no push rights on origin).
+    - Next: push `redesign`, merge into `main`, enable Pages with the Actions source.
+- Open questions:
+    - Decap CMS GitHub OAuth mediator is still not configured.
+- Working set:
+    - `src/pages/index.astro`
+    - `src/layouts/Base.astro`
+    - `src/components/*.astro`
+    - `src/styles/{tokens,base,site}.css`
+    - `src/scripts/site.js`
+    - `src/data/*.json`

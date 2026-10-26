@@ -1,0 +1,87 @@
+:root {
+  /* Surfaces: flat, no gradients */
+  --paper: #fdfbf7;
+  --surface: #ffffff;
+  --sand: #f6f1ea;
+  --sage-bg: #f2f5f0;
+  --sun-bg: #fcf6e9;
+
+  /* Text */
+  --ink: #2f2a26;
+  --ink-2: #57504a;
+  --ink-3: #6f6861;
+
+  /* Lines and accents */
+  --line: #e7ded3;
+  --line-2: #d6c9b9;
+  --accent: #8f4a30;
+  --accent-bg: #f5e8e1;
+  --sage: #4f5e47;
+  --sun: #8a6a24;
+
+  /* Type scale: Tailwind default steps */
+  --text-xs: 0.75rem;
+  --lh-xs: 1rem;
+  --text-sm: 0.875rem;
+  --lh-sm: 1.25rem;
+  --text-base: 1rem;
+  --lh-base: 1.5rem;
+  --text-lg: 1.125rem;
+  --lh-lg: 1.75rem;
+  --text-xl: 1.25rem;
+  --lh-xl: 1.75rem;
+  --text-2xl: 1.5rem;
+  --lh-2xl: 2rem;
+  --text-3xl: 1.875rem;
+  --lh-3xl: 2.25rem;
+  --text-4xl: 2.25rem;
+  --lh-4xl: 2.5rem;
+  --text-5xl: 3rem;
+  --lh-5xl: 1;
+  --text-6xl: 3.75rem;
+  --lh-6xl: 1;
+  --text-7xl: 4.5rem;
+  --lh-7xl: 1;
+
+  /* Spacing */
+  --s-0: 0;
+  --s-25: 2px;
+  --s-50: 4px;
+  --s-75: 8px;
+  --s-100: 12px;
+  --s-200: 16px;
+  --s-300: 24px;
+  --s-400: 32px;
+  --s-500: 40px;
+  --s-600: 48px;
+  --s-700: 64px;
+  --s-800: 80px;
+  --s-900: 96px;
+
+  /* Radius */
+  --r-sm: 2px;
+  --r: 4px;
+  --r-md: 6px;
+  --r-lg: 8px;
+  --r-xl: 12px;
+  --r-2xl: 16px;
+  --r-3xl: 24px;
+  --r-4xl: 32px;
+  --r-full: 9999px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-300: 300ms;
+  --dur-500: 500ms;
+  --dur-700: 700ms;
+
+  /* Layout */
+  --container: 1120px;
+  --gutter: var(--s-300);
+}
+
+@media (max-width: 640px) {
+  :root {
+    --gutter: var(--s-200);
+  }
+}

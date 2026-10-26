@@ -1,0 +1,128 @@
+---
+import Icon from './Icon.astro';
+import diploms from '../data/diploms.json';
+import certificates from '../data/certificates.json';
+import selfEducation from '../data/self-education.json';
+import awards from '../data/awards.json';
+import { asset, visibleDocs, type Doc } from '../lib/data';
+
+const plural = (n: number, one: string, few: string, many: string) => {
+  const mod10 = n % 10;
+  const mod100 = n % 100;
+  if (mod10 === 1 && mod100 !== 11) return `${n} ${one}`;
+  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return `${n} ${few}`;
+  return `${n} ${many}`;
+};
+
+const groups: {
+  id: string;
+  title: string;
+  icon: string;
+  count: string;
+  items: Doc[];
+  limit?: number;
+}[] = [
+  {
+    id: 'education',
+    title: 'Образование',
+    icon: 'graduation-cap',
+    count: plural(visibleDocs(diploms.items as Doc[]).length, 'документ', 'документа', 'документов'),
+    items: visibleDocs(diploms.items as Doc[]),
+  },
+  {
+    id: 'certificates',
+    title: 'Сертификаты и свидетельства',
+    icon: 'certificate',
+    count: plural(visibleDocs(certificates.items as Doc[]).length, 'документ', 'документа', 'документов'),
+    items: visibleDocs(certificates.items as Doc[]),
+    limit: 6,
+  },
+  {
+    id: 'reports',
+    title: 'Отчёты по самообразованию',
+    icon: 'notebook',
+    count: plural(visibleDocs(selfEducation.items as Doc[]).length, 'отчёт', 'отчёта', 'отчётов'),
+    items: visibleDocs(selfEducation.items as Doc[]),
+  },
+  {
+    id: 'awards',
+    title: 'Награды и благодарности',
+    icon: 'medal',
+    count: plural(visibleDocs(awards.items as Doc[]).length, 'документ', 'документа', 'документов'),
+    items: visibleDocs(awards.items as Doc[]),
+  },
+];
+---
+
+<section class="section" id="documents">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-head__title">
+        <p class="eyebrow"><Icon name="seal-check" size={18} /> Документы</p>
+        <h2>Портфолио: что подтверждено документами</h2>
+      </div>
+      <p>
+        34 файла: дипломы, сертификаты, отчёты и награды. Каждый открывается в новой вкладке, ничего не нужно
+        скачивать заранее.
+      </p>
+    </div>
+
+    {groups.map((group) => (
+      <section class="doc-group reveal" id={group.id} aria-labelledby={`${group.id}-title`}>
+        <div class="doc-group__head">
+          <h3 id={`${group.id}-title`}>
+            <Icon name={group.icon} size={20} />
+            {group.title}
+          </h3>
+          <span>{group.count}</span>
+        </div>
+
+        {group.items.length === 0 ? (
+          <p class="doc-empty">
+            <Icon name="file-text" size={20} />
+            Документов пока нет. Они появятся здесь после загрузки через панель управления.
+          </p>
+        ) : (
+        <div class="doc-grid" id={`${group.id}-grid`}>
+          {group.items.map((item, index) => (
+            <a
+              class={`doc${group.id === 'reports' ? ' doc--report' : ''}`}
+              href={asset(item.file)}
+              target="_blank"
+              rel="noopener"
+              hidden={group.limit !== undefined && index >= group.limit}
+            >
+              <div class="doc__top">
+                <Icon name={item.icon ?? 'file-text'} size={22} />
+                <span class="doc__cat">{item.category}</span>
+              </div>
+              <h4>{item.title}</h4>
+              {item.description && <p>{item.description}</p>}
+              {item.points && (
+                <ul class="doc__points">
+                  {item.points.map((point) => (
+                    <li>{point}</li>
+                  ))}
+                </ul>
+              )}
+              <span class="doc__meta">
+                {item.meta ?? 'Открыть документ'}
+                <Icon name="arrow-up-right" size={14} />
+              </span>
+            </a>
+          ))}
+        </div>
+        )}
+
+        {group.limit !== undefined && group.items.length > group.limit && (
+          <div class="doc-grid__more">
+            <button class="btn btn--ghost" type="button" data-expand={`${group.id}-grid`}>
+              Показать все {group.items.length} {plural(group.items.length, 'документ', 'документа', 'документов')}
+              <Icon name="caret-down" size={18} />
+            </button>
+          </div>
+        )}
+      </section>
+    ))}
+  </div>
+</section>

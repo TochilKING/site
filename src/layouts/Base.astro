@@ -1,0 +1,79 @@
+---
+import '../styles/tokens.css';
+import '../styles/base.css';
+import '../styles/site.css';
+import Nav from '../components/Nav.astro';
+import Icon from '../components/Icon.astro';
+import { base } from '../lib/data';
+
+type Props = {
+  title: string;
+  description: string;
+  noindex?: boolean;
+};
+
+const { title, description, noindex = false } = Astro.props;
+const onHome = Astro.url.pathname.replace(/\/$/, '') === base;
+const anchor = (hash: string) => (onHome ? hash : `${base}/${hash}`);
+const links = [
+  { href: anchor('#approach'), label: 'Подход' },
+  { href: anchor('#results'), label: 'Результаты' },
+  { href: anchor('#documents'), label: 'Документы' },
+  { href: anchor('#group'), label: 'Группа' },
+  { href: anchor('#parents'), label: 'Родителям' },
+  { href: anchor('#faq'), label: 'Вопросы' },
+];
+const canonical = new URL(Astro.url.pathname.replace(/\/$/, '/'), Astro.site);
+const ogImage = new URL(`${base}/img/photo_main.jpg`, Astro.site);
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <link rel="canonical" href={canonical.href} />
+    <link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
+    <meta name="theme-color" content="#fdfbf7" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical.href} />
+    <meta property="og:image" content={ogImage.href} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script is:inline>
+      document.documentElement.classList.add('has-js');
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти к содержанию</a>
+    <Nav links={links} contactHref={anchor('#contact')} topHref={anchor('#top')} />
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div class="footer__about">
+          <p class="footer__name">Точилкина Ольга Сергеевна</p>
+          <p class="meta">Воспитатель ФГБДОУ «Центр развития ребёнка, детский сад №1599», Москва</p>
+        </div>
+        <nav class="footer__links" aria-label="Служебные страницы">
+          <a href={`${base}/privacy/`}>Политика конфиденциальности</a>
+          <a href={anchor('#contact')}>Написать мне</a>
+          <a href={anchor('#top')}>Наверх <Icon name="arrow-up-right" size={16} /></a>
+        </nav>
+      </div>
+      <div class="container footer__line">
+        <span class="meta">© 2026 Точилкина О. С.</span>
+        <span class="meta">Личный сайт воспитателя, некоммерческий проект</span>
+      </div>
+    </footer>
+    <script>
+      import '../scripts/site.js';
+    </script>
+  </body>
+</html>

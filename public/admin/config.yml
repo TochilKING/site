@@ -1,0 +1,416 @@
+backend:
+  name: github
+  repo: tochilkina-os/site
+  branch: main
+
+local_backend: true
+publish_mode: simple
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "site_documents"
+    label: "Документы сайта"
+    editor:
+      preview: false
+    files:
+      - label: "Образование"
+        name: "diploms"
+        file: "src/data/diploms.json"
+        format: "json"
+        fields:
+          - label: "Документы"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields: &common_document_fields
+              - { label: "Показывать на сайте", name: "visible", widget: "boolean", default: true }
+              - { label: "Порядок", name: "order", widget: "number", value_type: "int", default: 10, hint: "Чем меньше число, тем выше карточка." }
+              - { label: "Название", name: "title", widget: "string" }
+              - { label: "Категория", name: "category", widget: "string", default: "Документ" }
+              - { label: "Описание", name: "description", widget: "text", required: false }
+              - { label: "Подпись файла", name: "meta", widget: "string", required: false, hint: "Например: PDF, 1.8 МБ →" }
+              - label: "Иконка"
+                name: "icon"
+                widget: "select"
+                default: "file-text"
+                hint: "Иконки Phosphor, не эмодзи."
+                options:
+                  - { label: "Диплом", value: "graduation-cap" }
+                  - { label: "Книга", value: "book-open-text" }
+                  - { label: "Печать", value: "seal-check" }
+                  - { label: "Сертификат", value: "certificate" }
+                  - { label: "Медаль", value: "medal" }
+                  - { label: "Кубок", value: "trophy" }
+                  - { label: "Документ", value: "file-text" }
+                  - { label: "Отчёт", value: "notebook" }
+                  - { label: "График", value: "chart-line" }
+                  - { label: "Мозг", value: "brain" }
+                  - { label: "Растение", value: "plant" }
+                  - { label: "Лист", value: "leaf" }
+                  - { label: "Ребёнок", value: "baby" }
+                  - { label: "Рукопожатие", value: "handshake" }
+                  - { label: "Семья", value: "users-three" }
+                  - { label: "Группа", value: "users" }
+                  - { label: "Ладонь", value: "hand-palm" }
+                  - { label: "Книги", value: "books" }
+                  - { label: "Беседа", value: "chat-teardrop-text" }
+                  - { label: "Здание", value: "buildings" }
+                  - { label: "Театр", value: "mask-happy" }
+                  - { label: "Глобус", value: "globe" }
+                  - { label: "Искра", value: "sparkle" }
+                  - { label: "Флаг", value: "flag" }
+                  - { label: "Молния", value: "lightning" }
+                  - { label: "Пазл", value: "puzzle-piece" }
+                  - { label: "Дом", value: "house-line" }
+                  - { label: "Речь", value: "chat-circle-text" }
+                  - { label: "Одежда", value: "t-shirt" }
+                  - { label: "Режим дня", value: "clock" }
+                  - { label: "Птица", value: "bird" }
+                  - { label: "Благодарность", value: "hands-praying" }
+                  - { label: "Аплодисменты", value: "hands-clapping" }
+                  - { label: "Экология", value: "recycle" }
+              - label: "Цвет"
+                name: "color"
+                widget: "select"
+                default: "terracotta"
+                options:
+                  - { label: "Терракотовый", value: "terracotta" }
+                  - { label: "Зелёный", value: "sage" }
+                  - { label: "Солнечный", value: "sun" }
+                  - { label: "Глиняный", value: "clay" }
+              - label: "Файл"
+                name: "file"
+                widget: "file"
+                media_folder: "public/diploms"
+                public_folder: "/diploms"
+                choose_url: false
+                media_library:
+                  config:
+                    max_file_size: 10485760
+
+      - label: "Сертификаты"
+        name: "certificates"
+        file: "src/data/certificates.json"
+        format: "json"
+        fields:
+          - label: "Сертификаты"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Показывать на сайте", name: "visible", widget: "boolean", default: true }
+              - { label: "Порядок", name: "order", widget: "number", value_type: "int", default: 10 }
+              - { label: "Название", name: "title", widget: "string" }
+              - { label: "Категория", name: "category", widget: "string", default: "Сертификат" }
+              - { label: "Подпись", name: "meta", widget: "string", default: "Открыть PDF", required: false }
+              - label: "Иконка"
+                name: "icon"
+                widget: "select"
+                default: "file-text"
+                hint: "Иконки Phosphor, не эмодзи."
+                options:
+                  - { label: "Диплом", value: "graduation-cap" }
+                  - { label: "Книга", value: "book-open-text" }
+                  - { label: "Печать", value: "seal-check" }
+                  - { label: "Сертификат", value: "certificate" }
+                  - { label: "Медаль", value: "medal" }
+                  - { label: "Кубок", value: "trophy" }
+                  - { label: "Документ", value: "file-text" }
+                  - { label: "Отчёт", value: "notebook" }
+                  - { label: "График", value: "chart-line" }
+                  - { label: "Мозг", value: "brain" }
+                  - { label: "Растение", value: "plant" }
+                  - { label: "Лист", value: "leaf" }
+                  - { label: "Ребёнок", value: "baby" }
+                  - { label: "Рукопожатие", value: "handshake" }
+                  - { label: "Семья", value: "users-three" }
+                  - { label: "Группа", value: "users" }
+                  - { label: "Ладонь", value: "hand-palm" }
+                  - { label: "Книги", value: "books" }
+                  - { label: "Беседа", value: "chat-teardrop-text" }
+                  - { label: "Здание", value: "buildings" }
+                  - { label: "Театр", value: "mask-happy" }
+                  - { label: "Глобус", value: "globe" }
+                  - { label: "Искра", value: "sparkle" }
+                  - { label: "Флаг", value: "flag" }
+                  - { label: "Молния", value: "lightning" }
+                  - { label: "Пазл", value: "puzzle-piece" }
+                  - { label: "Дом", value: "house-line" }
+                  - { label: "Речь", value: "chat-circle-text" }
+                  - { label: "Одежда", value: "t-shirt" }
+                  - { label: "Режим дня", value: "clock" }
+                  - { label: "Птица", value: "bird" }
+                  - { label: "Благодарность", value: "hands-praying" }
+                  - { label: "Аплодисменты", value: "hands-clapping" }
+                  - { label: "Экология", value: "recycle" }
+              - label: "Цвет"
+                name: "color"
+                widget: "select"
+                default: "terracotta"
+                options: &color_options
+                  - { label: "Терракотовый", value: "terracotta" }
+                  - { label: "Зелёный", value: "sage" }
+                  - { label: "Солнечный", value: "sun" }
+                  - { label: "Глиняный", value: "clay" }
+              - label: "Файл"
+                name: "file"
+                widget: "file"
+                media_folder: "public/sertificats"
+                public_folder: "/sertificats"
+                choose_url: false
+                media_library:
+                  config:
+                    max_file_size: 10485760
+
+      - label: "Самообразование"
+        name: "self_education"
+        file: "src/data/self-education.json"
+        format: "json"
+        fields:
+          - label: "Отчёты"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.category}} — {{fields.title}}"
+            fields:
+              - { label: "Показывать на сайте", name: "visible", widget: "boolean", default: true }
+              - { label: "Порядок", name: "order", widget: "number", value_type: "int", default: 10 }
+              - { label: "Название", name: "title", widget: "string" }
+              - { label: "Категория/год", name: "category", widget: "string", default: "Отчёт по самообразованию" }
+              - { label: "Описание", name: "description", widget: "text" }
+              - label: "Ключевые пункты"
+                name: "points"
+                widget: "list"
+                required: false
+                field: { label: "Пункт", name: "point", widget: "string" }
+              - label: "Иконка"
+                name: "icon"
+                widget: "select"
+                default: "file-text"
+                hint: "Иконки Phosphor, не эмодзи."
+                options:
+                  - { label: "Диплом", value: "graduation-cap" }
+                  - { label: "Книга", value: "book-open-text" }
+                  - { label: "Печать", value: "seal-check" }
+                  - { label: "Сертификат", value: "certificate" }
+                  - { label: "Медаль", value: "medal" }
+                  - { label: "Кубок", value: "trophy" }
+                  - { label: "Документ", value: "file-text" }
+                  - { label: "Отчёт", value: "notebook" }
+                  - { label: "График", value: "chart-line" }
+                  - { label: "Мозг", value: "brain" }
+                  - { label: "Растение", value: "plant" }
+                  - { label: "Лист", value: "leaf" }
+                  - { label: "Ребёнок", value: "baby" }
+                  - { label: "Рукопожатие", value: "handshake" }
+                  - { label: "Семья", value: "users-three" }
+                  - { label: "Группа", value: "users" }
+                  - { label: "Ладонь", value: "hand-palm" }
+                  - { label: "Книги", value: "books" }
+                  - { label: "Беседа", value: "chat-teardrop-text" }
+                  - { label: "Здание", value: "buildings" }
+                  - { label: "Театр", value: "mask-happy" }
+                  - { label: "Глобус", value: "globe" }
+                  - { label: "Искра", value: "sparkle" }
+                  - { label: "Флаг", value: "flag" }
+                  - { label: "Молния", value: "lightning" }
+                  - { label: "Пазл", value: "puzzle-piece" }
+                  - { label: "Дом", value: "house-line" }
+                  - { label: "Речь", value: "chat-circle-text" }
+                  - { label: "Одежда", value: "t-shirt" }
+                  - { label: "Режим дня", value: "clock" }
+                  - { label: "Птица", value: "bird" }
+                  - { label: "Благодарность", value: "hands-praying" }
+                  - { label: "Аплодисменты", value: "hands-clapping" }
+                  - { label: "Экология", value: "recycle" }
+              - { label: "Цвет", name: "color", widget: "select", default: "terracotta", options: *color_options }
+              - label: "Файл"
+                name: "file"
+                widget: "file"
+                media_folder: "public/self-education"
+                public_folder: "/self-education"
+                choose_url: false
+                media_library:
+                  config:
+                    max_file_size: 10485760
+
+      - label: "Достижения и награды"
+        name: "awards"
+        file: "src/data/awards.json"
+        format: "json"
+        fields:
+          - label: "Награды"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.category}} — {{fields.title}}"
+            fields:
+              - { label: "Показывать на сайте", name: "visible", widget: "boolean", default: true }
+              - { label: "Порядок", name: "order", widget: "number", value_type: "int", default: 10 }
+              - { label: "Название", name: "title", widget: "string" }
+              - { label: "Категория", name: "category", widget: "string", default: "Награда" }
+              - { label: "Подпись", name: "meta", widget: "string", default: "Открыть награду в PDF", required: false }
+              - label: "Иконка"
+                name: "icon"
+                widget: "select"
+                default: "file-text"
+                hint: "Иконки Phosphor, не эмодзи."
+                options:
+                  - { label: "Диплом", value: "graduation-cap" }
+                  - { label: "Книга", value: "book-open-text" }
+                  - { label: "Печать", value: "seal-check" }
+                  - { label: "Сертификат", value: "certificate" }
+                  - { label: "Медаль", value: "medal" }
+                  - { label: "Кубок", value: "trophy" }
+                  - { label: "Документ", value: "file-text" }
+                  - { label: "Отчёт", value: "notebook" }
+                  - { label: "График", value: "chart-line" }
+                  - { label: "Мозг", value: "brain" }
+                  - { label: "Растение", value: "plant" }
+                  - { label: "Лист", value: "leaf" }
+                  - { label: "Ребёнок", value: "baby" }
+                  - { label: "Рукопожатие", value: "handshake" }
+                  - { label: "Семья", value: "users-three" }
+                  - { label: "Группа", value: "users" }
+                  - { label: "Ладонь", value: "hand-palm" }
+                  - { label: "Книги", value: "books" }
+                  - { label: "Беседа", value: "chat-teardrop-text" }
+                  - { label: "Здание", value: "buildings" }
+                  - { label: "Театр", value: "mask-happy" }
+                  - { label: "Глобус", value: "globe" }
+                  - { label: "Искра", value: "sparkle" }
+                  - { label: "Флаг", value: "flag" }
+                  - { label: "Молния", value: "lightning" }
+                  - { label: "Пазл", value: "puzzle-piece" }
+                  - { label: "Дом", value: "house-line" }
+                  - { label: "Речь", value: "chat-circle-text" }
+                  - { label: "Одежда", value: "t-shirt" }
+                  - { label: "Режим дня", value: "clock" }
+                  - { label: "Птица", value: "bird" }
+                  - { label: "Благодарность", value: "hands-praying" }
+                  - { label: "Аплодисменты", value: "hands-clapping" }
+                  - { label: "Экология", value: "recycle" }
+              - label: "Файл"
+                name: "file"
+                widget: "file"
+                media_folder: "public/awards"
+                public_folder: "/awards"
+                choose_url: false
+                media_library:
+                  config:
+                    max_file_size: 10485760
+
+      - label: "Рекомендации для родителей"
+        name: "recommendations"
+        file: "src/data/recommendations.json"
+        format: "json"
+        fields:
+          - label: "Материалы"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Показывать на сайте", name: "visible", widget: "boolean", default: true }
+              - { label: "Порядок", name: "order", widget: "number", value_type: "int", default: 10 }
+              - { label: "Название", name: "title", widget: "string" }
+              - { label: "Категория", name: "category", widget: "string", default: "Рекомендации" }
+              - { label: "Подпись", name: "meta", widget: "string", default: "Рекомендации • PDF" }
+              - label: "Иконка"
+                name: "icon"
+                widget: "select"
+                default: "file-text"
+                hint: "Иконки Phosphor, не эмодзи."
+                options:
+                  - { label: "Диплом", value: "graduation-cap" }
+                  - { label: "Книга", value: "book-open-text" }
+                  - { label: "Печать", value: "seal-check" }
+                  - { label: "Сертификат", value: "certificate" }
+                  - { label: "Медаль", value: "medal" }
+                  - { label: "Кубок", value: "trophy" }
+                  - { label: "Документ", value: "file-text" }
+                  - { label: "Отчёт", value: "notebook" }
+                  - { label: "График", value: "chart-line" }
+                  - { label: "Мозг", value: "brain" }
+                  - { label: "Растение", value: "plant" }
+                  - { label: "Лист", value: "leaf" }
+                  - { label: "Ребёнок", value: "baby" }
+                  - { label: "Рукопожатие", value: "handshake" }
+                  - { label: "Семья", value: "users-three" }
+                  - { label: "Группа", value: "users" }
+                  - { label: "Ладонь", value: "hand-palm" }
+                  - { label: "Книги", value: "books" }
+                  - { label: "Беседа", value: "chat-teardrop-text" }
+                  - { label: "Здание", value: "buildings" }
+                  - { label: "Театр", value: "mask-happy" }
+                  - { label: "Глобус", value: "globe" }
+                  - { label: "Искра", value: "sparkle" }
+                  - { label: "Флаг", value: "flag" }
+                  - { label: "Молния", value: "lightning" }
+                  - { label: "Пазл", value: "puzzle-piece" }
+                  - { label: "Дом", value: "house-line" }
+                  - { label: "Речь", value: "chat-circle-text" }
+                  - { label: "Одежда", value: "t-shirt" }
+                  - { label: "Режим дня", value: "clock" }
+                  - { label: "Птица", value: "bird" }
+                  - { label: "Благодарность", value: "hands-praying" }
+                  - { label: "Аплодисменты", value: "hands-clapping" }
+                  - { label: "Экология", value: "recycle" }
+              - { label: "Цвет", name: "color", widget: "select", default: "terracotta", options: *color_options }
+              - label: "Файл"
+                name: "file"
+                widget: "file"
+                media_folder: "public/recomendation"
+                public_folder: "/recomendation"
+                choose_url: false
+                media_library:
+                  config:
+                    max_file_size: 10485760
+
+      - label: "Мониторинг"
+        name: "monitoring"
+        file: "src/data/monitoring.json"
+        format: "json"
+        fields:
+          - label: "Учебные годы"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.year}} — {{fields.group}}"
+            fields:
+              - { label: "Показывать на сайте", name: "visible", widget: "boolean", default: true }
+              - { label: "Порядок", name: "order", widget: "number", value_type: "int", default: 10 }
+              - { label: "Учебный год", name: "year", widget: "string", hint: "Например: 2025-2026" }
+              - { label: "Группа", name: "group", widget: "string" }
+              - { label: "Итоговый показатель", name: "total", widget: "string", default: "—" }
+              - { label: "1 полугодие, %", name: "firstHalfTotal", widget: "number", value_type: "int", min: 0, max: 100, default: 0 }
+              - { label: "2 полугодие, %", name: "secondHalfTotal", widget: "number", value_type: "int", min: 0, max: 100, default: 0 }
+              - { label: "Название сводной таблицы", name: "title1", widget: "string" }
+              - { label: "Подпись сводной таблицы", name: "size1", widget: "string", default: "Сводная таблица, DOCX" }
+              - label: "Файл сводной таблицы"
+                name: "href1"
+                widget: "file"
+                media_folder: "public/monitoring"
+                public_folder: "/monitoring"
+                choose_url: false
+                media_library:
+                  config:
+                    max_file_size: 10485760
+              - { label: "Название аналитической справки", name: "title2", widget: "string" }
+              - { label: "Подпись аналитической справки", name: "size2", widget: "string", default: "Выводы и рекомендации, DOCX" }
+              - label: "Файл аналитической справки"
+                name: "href2"
+                widget: "file"
+                media_folder: "public/monitoring"
+                public_folder: "/monitoring"
+                choose_url: false
+                media_library:
+                  config:
+                    max_file_size: 10485760
+              - label: "Показатели развития"
+                name: "stats"
+                widget: "list"
+                min: 5
+                max: 5
+                summary: "{{fields.label}}: {{fields.base}}% → {{fields.value}}%"
+                fields:
+                  - { label: "Направление", name: "label", widget: "string" }
+                  - { label: "1 полугодие, %", name: "base", widget: "number", value_type: "int", min: 0, max: 100, default: 0 }
+                  - { label: "2 полугодие, %", name: "value", widget: "number", value_type: "int", min: 0, max: 100, default: 0 }

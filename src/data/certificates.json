@@ -1,0 +1,193 @@
+{
+  "items": [
+    {
+      "title": "Капризы, упрямство, агрессия и другие проблемы",
+      "category": "Свидетельство",
+      "file": "./sertificats/Свидетельство Капризы, упрямство, агрессия и другие проблемы.pdf",
+      "icon": "file-text",
+      "color": "terracotta",
+      "order": 10,
+      "visible": true
+    },
+    {
+      "title": "Агрессивный ребенок: как контролировать эмоции",
+      "category": "Сертификат",
+      "file": "./sertificats/Сертификат - Агрессивный ребенок Как контролировать эмоции.pdf",
+      "icon": "brain",
+      "color": "sun",
+      "order": 20,
+      "visible": true
+    },
+    {
+      "title": "Адаптация детей раннего возраста к условиям ДС",
+      "category": "Сертификат",
+      "file": "./sertificats/Сертификат - Адаптация детей раннего возраста к условиям ДС.pdf",
+      "icon": "plant",
+      "color": "sage",
+      "order": 30,
+      "visible": true
+    },
+    {
+      "title": "Воспитание самостоятельности у детей раннего возраста",
+      "category": "Сертификат",
+      "file": "./sertificats/Сертификат - Воспитание самостоятельности у детей раннего возраста.pdf",
+      "icon": "baby",
+      "color": "terracotta",
+      "order": 40,
+      "visible": true
+    },
+    {
+      "title": "Психолого-педагогическое сопровождение детей с ОВЗ",
+      "category": "Сертификат",
+      "file": "./sertificats/Сертификат - Психолого-педагогическое сопровождение детей с ОВЗ.pdf",
+      "icon": "handshake",
+      "color": "sage",
+      "order": 50,
+      "visible": true
+    },
+    {
+      "title": "Родители: смотреть нельзя участвовать",
+      "category": "Сертификат",
+      "file": "./sertificats/Сертификат - Родители Смотреть нельзя участвовать.pdf",
+      "icon": "users-three",
+      "color": "sun",
+      "order": 60,
+      "visible": true
+    },
+    {
+      "title": "Сенсорное воспитание детей раннего возраста",
+      "category": "Сертификат",
+      "file": "./sertificats/Сертификат - Сенсорное воспитание детей раннего возраста (10-03-2026).pdf",
+      "icon": "hand-palm",
+      "color": "terracotta",
+      "order": 70,
+      "visible": true
+    },
+    {
+      "title": "ФГОС ДО, ФОП ДО: значение волшебных сказок",
+      "category": "Сертификат",
+      "file": "./sertificats/Сертификат - ФГОС ДО ФОП ДО Значение волшебных сказок.pdf",
+      "icon": "books",
+      "color": "sage",
+      "order": 80,
+      "visible": true
+    },
+    {
+      "title": "ФОП ДО: беседы с родителями о главном",
+      "category": "Сертификат",
+      "file": "./sertificats/Сертификат - ФОП ДО Беседы с родителями о главном.pdf",
+      "icon": "chat-teardrop-text",
+      "color": "sun",
+      "order": 90,
+      "visible": true
+    },
+    {
+      "title": "Детсады и школы",
+      "category": "Сертификат",
+      "file": "./sertificats/Сертификат Детсады и школы.pdf",
+      "icon": "buildings",
+      "color": "clay",
+      "order": 100,
+      "visible": true
+    },
+    {
+      "title": "Лучшая развивающая предметно-пространственная среда",
+      "category": "Сертификат",
+      "file": "./sertificats/Сертификат Лучшая развивающая предметно-пространственная среда.pdf",
+      "icon": "leaf",
+      "color": "sage",
+      "order": 110,
+      "visible": true
+    },
+    {
+      "title": "Маршруты театральных технологий",
+      "category": "Сертификат",
+      "file": "./sertificats/Сертификат Маршруты театральных технологий.pdf",
+      "icon": "mask-happy",
+      "color": "terracotta",
+      "order": 120,
+      "visible": true
+    },
+    {
+      "title": "Международная конференция: инновационные технологии",
+      "category": "Сертификат",
+      "file": "./sertificats/Сертификат Международная конференция Инновационные технологии.pdf",
+      "icon": "globe",
+      "color": "sun",
+      "order": 130,
+      "visible": true
+    },
+    {
+      "title": "Новые возможности использования нейросетей",
+      "category": "Сертификат",
+      "file": "./sertificats/Сертификат Новые возможности использования нейросетей.pdf",
+      "icon": "sparkle",
+      "color": "clay",
+      "order": 140,
+      "visible": true
+    },
+    {
+      "title": "Патриотическое воспитание детей дошкольного возраста",
+      "category": "Сертификат",
+      "file": "./sertificats/Сертификат Патриотическое воспитание детей дошкольного возраста.pdf",
+      "icon": "flag",
+      "color": "terracotta",
+      "order": 150,
+      "visible": true
+    },
+    {
+      "title": "Работа с гиперактивными детьми",
+      "category": "Сертификат",
+      "file": "./sertificats/Сертификат Работа с гиперактивными детьми.pdf",
+      "icon": "lightning",
+      "color": "sage",
+      "order": 160,
+      "visible": true
+    },
+    {
+      "title": "Работа с детьми с СДВГ",
+      "category": "Сертификат",
+      "file": "./sertificats/Сертификат Работа с детьми с СДВГ.pdf",
+      "icon": "puzzle-piece",
+      "color": "sun",
+      "order": 170,
+      "visible": true
+    },
+    {
+      "title": "Сенсорное воспитание детей раннего возраста",
+      "category": "Сертификат",
+      "file": "./sertificats/Сертификат Сенсорное воспитание детей раннего возраста.pdf",
+      "icon": "baby",
+      "color": "sage",
+      "order": 180,
+      "visible": true
+    },
+    {
+      "title": "Современное родительское собрание в детском саду",
+      "category": "Сертификат",
+      "file": "./sertificats/Сертификат Современное родительское собрание в Детском саду.pdf",
+      "icon": "users",
+      "color": "terracotta",
+      "order": 190,
+      "visible": true
+    },
+    {
+      "title": "Проектирование пространства развития малышей",
+      "category": "Сертификат",
+      "file": "./sertificats/Сертификат Современные подходы к проектированию пространства развития малышей от 9 месяцев до 3 лет.pdf",
+      "icon": "house-line",
+      "color": "sun",
+      "order": 200,
+      "visible": true
+    },
+    {
+      "title": "Создание в семье речевой среды",
+      "category": "Сертификат",
+      "file": "./sertificats/Сертификат Создание в семье речевой среды.pdf",
+      "icon": "chat-circle-text",
+      "color": "sage",
+      "order": 210,
+      "visible": true
+    }
+  ]
+}

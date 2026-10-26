@@ -1,0 +1,94 @@
+---
+import Icon from './Icon.astro';
+---
+
+<section class="section section--sage contact" id="contact">
+  <div class="container contact__grid">
+    <div class="reveal">
+      <p class="eyebrow"><Icon name="envelope-simple" size={18} /> Контакты</p>
+      <h2 class="h2-md">Напишите, если нужен совет по ребёнку</h2>
+      <p class="lead lead--tight">
+        Отвечаю на вопросы родителей, коллег и комиссии. Если нужен документ, которого нет на сайте, скажите
+        какой, и я добавлю его.
+      </p>
+
+      <div class="contact__list">
+        <div class="contact__row">
+          <Icon name="map-pin" size={20} />
+          <div>
+            <small>Место работы</small>
+            <strong>ФГБДОУ «Центр развития ребёнка, детский сад №1599», Москва</strong>
+          </div>
+        </div>
+        <div class="contact__row">
+          <Icon name="clock" size={20} />
+          <div>
+            <small>Когда отвечаю</small>
+            <strong>Рабочие дни, обычно в течение суток</strong>
+          </div>
+        </div>
+      </div>
+
+      <p class="contact__alt">
+        Или письмом напрямую:
+        <a class="link-arrow" href="mailto:oliako4neva@yandex.ru">
+          oliako4neva@yandex.ru
+          <Icon name="arrow-up-right" size={16} />
+        </a>
+      </p>
+    </div>
+
+    <form
+      class="form reveal"
+      action="https://formsubmit.co/oliako4neva@yandex.ru"
+      method="POST"
+      data-contact-form
+      novalidate
+    >
+      <h3>Сообщение через сайт</h3>
+      <input type="hidden" name="_subject" value="Сообщение с сайта Точилкиной О. С." />
+      <input type="hidden" name="_template" value="table" />
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" hidden />
+
+      <label class="field">
+        <span>Ваше имя</span>
+        <input type="text" name="name" autocomplete="name" placeholder="Анна Иванова" required />
+        <span class="field__error" role="alert"></span>
+      </label>
+
+      <label class="field">
+        <span>Почта для ответа</span>
+        <input type="email" name="email" autocomplete="email" placeholder="anna@example.com" required />
+        <span class="field__error" role="alert"></span>
+      </label>
+
+      <label class="field">
+        <span>Тема</span>
+        <select name="topic" required>
+          <option value="" selected disabled>Выберите тему</option>
+          <option>Вопрос о развитии ребёнка</option>
+          <option>Консультация для родителя</option>
+          <option>Запрос документа для комиссии</option>
+          <option>Другое</option>
+        </select>
+        <span class="field__error" role="alert"></span>
+      </label>
+
+      <label class="field">
+        <span>Сообщение</span>
+        <textarea name="message" rows="4" placeholder="Здравствуйте! Хотела бы уточнить..." required></textarea>
+        <span class="field__error" role="alert"></span>
+      </label>
+
+      <button class="btn btn--primary" type="submit">
+        Отправить
+        <Icon name="arrow-right" size={18} />
+      </button>
+      <p class="form__status" data-form-status aria-live="polite"></p>
+      <p class="form__note">
+        Данные используются только для ответа. Подробности в
+        <a class="link-arrow" href={`${import.meta.env.BASE_URL}privacy/`}>политике конфиденциальности</a>.
+      </p>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,45 @@
+---
+import Icon from './Icon.astro';
+import recommendations from '../data/recommendations.json';
+import { asset, visibleDocs, type Doc } from '../lib/data';
+
+const items = visibleDocs(recommendations.items as Doc[]);
+---
+
+<section class="section" id="parents">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-head__title">
+        <p class="eyebrow"><Icon name="hand-heart" size={18} /> Для родителей</p>
+        <h2>Материалы, которые можно читать дома</h2>
+      </div>
+      <p>
+        Шесть коротких памяток по темам, которые чаще всего спрашивают на собраниях. Формат PDF, открываются
+        в браузере или на телефоне.
+      </p>
+    </div>
+
+    {items.length === 0 ? (
+      <p class="doc-empty">
+        <Icon name="file-text" size={20} />
+        Материалов пока нет. Они появятся здесь после загрузки через панель управления.
+      </p>
+    ) : (
+    <div class="doc-grid">
+      {items.map((item) => (
+        <a class="doc reveal" href={asset(item.file)} target="_blank" rel="noopener">
+          <div class="doc__top">
+            <Icon name={item.icon ?? 'file-text'} size={22} />
+            <span class="doc__cat">{item.category}</span>
+          </div>
+          <h4>{item.title}</h4>
+          <span class="doc__meta">
+            {item.meta?.replace('Рекомендации • ', '') ?? 'PDF'}
+            <Icon name="arrow-up-right" size={14} />
+          </span>
+        </a>
+      ))}
+    </div>
+    )}
+  </div>
+</section>

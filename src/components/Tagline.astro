@@ -1,0 +1,18 @@
+---
+const lines = [
+  'Ребёнок не готовится к жизни.',
+  'Он уже живёт: играет, спорит, ошибается и учится.',
+];
+---
+
+<section class="tagline" aria-label="Главная мысль">
+  <div class="container">
+    <p data-tagline>
+      {lines.map((line) =>
+        line.split(' ').map((word) => (
+          <span class="word">{word} </span>
+        ))
+      )}
+    </p>
+  </div>
+</section>

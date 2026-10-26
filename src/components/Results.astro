@@ -1,0 +1,126 @@
+---
+import Icon from './Icon.astro';
+import monitoring from '../data/monitoring.json';
+import { asset, visibleDocs, year } from '../lib/data';
+
+const years = visibleDocs(monitoring.items as any[]).map((item: any) => ({
+  ...item,
+  href1: asset(item.href1),
+  href2: asset(item.href2),
+}));
+const current = years[years.length - 1];
+---
+
+<section class="section section--sage" id="results">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-head__title">
+        <p class="eyebrow"><Icon name="chart-line" size={18} /> Результаты</p>
+        <h2>Что показывают цифры за три года</h2>
+      </div>
+      <p>
+        Диагностика по пяти направлениям, две точки в году. Ниже те же данные, что лежат в сводных таблицах
+        и аналитических справках.
+      </p>
+    </div>
+
+    <div class="results__grid">
+      <div class="reveal">
+        <div class="results__facts">
+          <div class="results__fact">
+            <strong>43% → 80%</strong>
+            <span>доля детей с показателями выше 75% в группе «Ромашки» за 2023–2024</span>
+          </div>
+          <div class="results__fact">
+            <strong>17% → 85%</strong>
+            <span>художественно-эстетическое развитие в той же группе, самый большой прирост</span>
+          </div>
+          <div class="results__fact">
+            <strong>40 детей</strong>
+            <span>в трёх группах за три года: 13, 12 и 15 человек, каждый набор начинается с входной диагностики</span>
+          </div>
+          <div class="results__fact">
+            <strong>3 отчёта</strong>
+            <span>по самообразованию: речь, моторика, работа с семьёй</span>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="monitor reveal"
+        data-monitor={JSON.stringify(years)}
+      >
+        <div class="monitor__head">
+          <div>
+            <h3>Доля детей с показателями выше 75%</h3>
+            <p class="monitor__group" data-monitor-group>{current.group}</p>
+          </div>
+          <strong class="monitor__total" data-monitor-total>{current.total}</strong>
+        </div>
+
+        <div class="monitor__years" role="tablist" aria-label="Учебный год">
+          {years.map((item, index) => (
+            <button
+              class="monitor__year"
+              type="button"
+              role="tab"
+              aria-selected={item === current ? 'true' : 'false'}
+              data-year-index={index}
+            >
+              {year(item.year)}
+            </button>
+          ))}
+        </div>
+
+        <div class="monitor__compare">
+          <div>
+            <span>1 полугодие</span>
+            <strong data-monitor-first>{current.firstHalfTotal}%</strong>
+          </div>
+          <span class="monitor__delta" data-monitor-delta>
+            +{current.secondHalfTotal - current.firstHalfTotal} п.п.
+          </span>
+          <div class="monitor__right">
+            <span>2 полугодие</span>
+            <strong data-monitor-second>{current.secondHalfTotal}%</strong>
+          </div>
+        </div>
+
+        <div class="monitor__stats" data-monitor-stats>
+          {current.stats.map((stat: any) => (
+            <div data-stat>
+              <div class="stat__row">
+                <span data-stat-label>{stat.label}</span>
+                <b data-stat-value>{stat.value}%</b>
+              </div>
+              <div class="stat__bar">
+                <span class="stat__base" data-stat-base style={`width:${stat.base}%`}></span>
+                <span
+                  class="stat__growth"
+                  data-stat-growth
+                  style={`left:${stat.base}%;width:${stat.value - stat.base}%`}
+                ></span>
+              </div>
+              <p class="stat__note" data-stat-note>
+                {stat.base}% → {stat.value}% · +{stat.value - stat.base} п.п.
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div class="monitor__files">
+          <a class="link-arrow" href={current.href1} target="_blank" rel="noopener" data-monitor-link1>
+            <Icon name="download-simple" size={16} />
+            <span data-monitor-title>{current.title1}</span>
+            <span class="meta" data-monitor-size>{current.size1}</span>
+          </a>
+          <a class="link-arrow" href={current.href2} target="_blank" rel="noopener" data-monitor-link2>
+            <Icon name="download-simple" size={16} />
+            <span data-monitor-title>{current.title2}</span>
+            <span class="meta" data-monitor-size>{current.size2}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
