@@ -19,6 +19,7 @@
     - Два дерева: опубликованный сайт — статика в корне `main` (Pages build_type legacy, PR #2 `content-nov-2026`), новая версия — Astro в `redesign` (PR #1). Файлы в `public/` общие.
     - Опубликовано: **https://o-tochilkina.github.io/** — репозиторий `o-tochilkina/o-tochilkina.github.io`, Pages из `main` / `/`, статика без сборки, `.nojekyll`. Ветка-источник `content-nov-2026`, коммиты `995b4e4` (контент) + `374d6c3` (title/description/OG, `.nojekyll`). Доступ к новому аккаунту — через `gh auth` (аккаунт `o-tochilkina` в keyring).
     - Старые адреса: `tochilkina-os.github.io/site/` — недоступен без входа в аккаунт `tochilkina-os` (пароля нет, вход только через Google/Apple), PR #2 и #1 висят открытыми. `tochilking.github.io/site/` — форк, ещё жив, но не канонический.
+    - Приватность: из публикации убраны все DOCX (17 файлов). Мониторинг и отчёты по самообразованию переведены в PDF (9 файлов, собраны Word'ом с открытием OpenAndRepair — два файла иначе не читаются), ФИО коллеги сокращено до «Миронова Н. А.», метаданные PDF очищены. Исходники ушли в `sources-docx/` (в `.gitignore`). Репозиторий `o-tochilkina.github.io` перезалит одним коммитом, чтобы старые DOCX не достались из истории.
     - Next: перенести Astro-редизайн на корень (`base: '/'`) и опубликовать вместо статики; настроить вход в `tochilkina-os` или закрыть его PR.
 - Open questions:
     - Decap CMS GitHub OAuth mediator is still not configured.
