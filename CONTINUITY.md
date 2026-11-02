@@ -17,7 +17,9 @@
     - Done: hero, approach, process, tagline reveal, results with year switcher, documents archive, group gallery, parents materials, FAQ, contact form, 404, privacy policy, SEO/OG/JSON-LD, favicon, sitemap, robots.
     - Now: контент за ноябрь 2026 добавлен в обе ветки. Сертификаты 21 → 25 (+Запуск речи через игру, Как сотрудничать с семьёй.jpg, Вебинар журнала «Обруч» и МШЗД, Роль привязанности в жизни ребёнка). Награды 7 → 9 (+За труд и заботу о детях, Диплом лауреата «Гигиена рук всегда важна».png). Памятки 6 → 8 (+Как привести ребёнка в ясли без слёз, Как приучить ребёнка к горшку; PDF собраны из DOCX через Word COM). Счётчики в Hero, Documents, Parents, FAQ и JSON-LD теперь считаются из `src/data/*.json`.
     - Два дерева: опубликованный сайт — статика в корне `main` (Pages build_type legacy, PR #2 `content-nov-2026`), новая версия — Astro в `redesign` (PR #1). Файлы в `public/` общие.
-    - Next: owner мержит PR #2 (актуализация живой версии), затем PR #1; после мержа #2 ветку `redesign` ребейзить на `main` (конфликт по удалённому `index.html` решается удалением).
+    - Опубликовано: **https://o-tochilkina.github.io/** — репозиторий `o-tochilkina/o-tochilkina.github.io`, Pages из `main` / `/`, статика без сборки, `.nojekyll`. Ветка-источник `content-nov-2026`, коммиты `995b4e4` (контент) + `374d6c3` (title/description/OG, `.nojekyll`). Доступ к новому аккаунту — через `gh auth` (аккаунт `o-tochilkina` в keyring).
+    - Старые адреса: `tochilkina-os.github.io/site/` — недоступен без входа в аккаунт `tochilkina-os` (пароля нет, вход только через Google/Apple), PR #2 и #1 висят открытыми. `tochilking.github.io/site/` — форк, ещё жив, но не канонический.
+    - Next: перенести Astro-редизайн на корень (`base: '/'`) и опубликовать вместо статики; настроить вход в `tochilkina-os` или закрыть его PR.
 - Open questions:
     - Decap CMS GitHub OAuth mediator is still not configured.
 - Working set:
