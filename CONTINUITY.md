@@ -15,8 +15,9 @@
     - Child photos kept, but as a compact unnamed strip with a consent note.
 - State:
     - Done: hero, approach, process, tagline reveal, results with year switcher, documents archive, group gallery, parents materials, FAQ, contact form, 404, privacy policy, SEO/OG/JSON-LD, favicon, sitemap, robots.
-    - Now: redesign branch ready for review; not pushed (no push rights on origin).
-    - Next: push `redesign`, merge into `main`, enable Pages with the Actions source.
+    - Now: контент за ноябрь 2026 добавлен в обе ветки. Сертификаты 21 → 25 (+Запуск речи через игру, Как сотрудничать с семьёй.jpg, Вебинар журнала «Обруч» и МШЗД, Роль привязанности в жизни ребёнка). Награды 7 → 9 (+За труд и заботу о детях, Диплом лауреата «Гигиена рук всегда важна».png). Памятки 6 → 8 (+Как привести ребёнка в ясли без слёз, Как приучить ребёнка к горшку; PDF собраны из DOCX через Word COM). Счётчики в Hero, Documents, Parents, FAQ и JSON-LD теперь считаются из `src/data/*.json`.
+    - Два дерева: опубликованный сайт — статика в корне `main` (Pages build_type legacy, PR #2 `content-nov-2026`), новая версия — Astro в `redesign` (PR #1). Файлы в `public/` общие.
+    - Next: owner мержит PR #2 (актуализация живой версии), затем PR #1; после мержа #2 ветку `redesign` ребейзить на `main` (конфликт по удалённому `index.html` решается удалением).
 - Open questions:
     - Decap CMS GitHub OAuth mediator is still not configured.
 - Working set:
