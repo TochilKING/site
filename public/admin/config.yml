@@ -68,6 +68,9 @@ collections:
                   - { label: "Режим дня", value: "clock" }
                   - { label: "Птица", value: "bird" }
                   - { label: "Благодарность", value: "hands-praying" }
+                  - { label: "Семья и забота", value: "hand-heart" }
+                  - { label: "Гигиена рук", value: "hand-soap" }
+                  - { label: "Горшок", value: "toilet" }
                   - { label: "Аплодисменты", value: "hands-clapping" }
                   - { label: "Экология", value: "recycle" }
               - label: "Цвет"
@@ -142,6 +145,9 @@ collections:
                   - { label: "Режим дня", value: "clock" }
                   - { label: "Птица", value: "bird" }
                   - { label: "Благодарность", value: "hands-praying" }
+                  - { label: "Семья и забота", value: "hand-heart" }
+                  - { label: "Гигиена рук", value: "hand-soap" }
+                  - { label: "Горшок", value: "toilet" }
                   - { label: "Аплодисменты", value: "hands-clapping" }
                   - { label: "Экология", value: "recycle" }
               - label: "Цвет"
@@ -221,6 +227,9 @@ collections:
                   - { label: "Режим дня", value: "clock" }
                   - { label: "Птица", value: "bird" }
                   - { label: "Благодарность", value: "hands-praying" }
+                  - { label: "Семья и забота", value: "hand-heart" }
+                  - { label: "Гигиена рук", value: "hand-soap" }
+                  - { label: "Горшок", value: "toilet" }
                   - { label: "Аплодисменты", value: "hands-clapping" }
                   - { label: "Экология", value: "recycle" }
               - { label: "Цвет", name: "color", widget: "select", default: "terracotta", options: *color_options }
@@ -287,6 +296,9 @@ collections:
                   - { label: "Режим дня", value: "clock" }
                   - { label: "Птица", value: "bird" }
                   - { label: "Благодарность", value: "hands-praying" }
+                  - { label: "Семья и забота", value: "hand-heart" }
+                  - { label: "Гигиена рук", value: "hand-soap" }
+                  - { label: "Горшок", value: "toilet" }
                   - { label: "Аплодисменты", value: "hands-clapping" }
                   - { label: "Экология", value: "recycle" }
               - label: "Файл"
@@ -352,6 +364,9 @@ collections:
                   - { label: "Режим дня", value: "clock" }
                   - { label: "Птица", value: "bird" }
                   - { label: "Благодарность", value: "hands-praying" }
+                  - { label: "Семья и забота", value: "hand-heart" }
+                  - { label: "Гигиена рук", value: "hand-soap" }
+                  - { label: "Горшок", value: "toilet" }
                   - { label: "Аплодисменты", value: "hands-clapping" }
                   - { label: "Экология", value: "recycle" }
               - { label: "Цвет", name: "color", widget: "select", default: "terracotta", options: *color_options }

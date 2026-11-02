@@ -1,7 +1,7 @@
 ---
 import Icon from './Icon.astro';
 import recommendations from '../data/recommendations.json';
-import { asset, visibleDocs, type Doc } from '../lib/data';
+import { asset, plural, visibleDocs, type Doc } from '../lib/data';
 
 const items = visibleDocs(recommendations.items as Doc[]);
 ---
@@ -14,8 +14,8 @@ const items = visibleDocs(recommendations.items as Doc[]);
         <h2>Материалы, которые можно читать дома</h2>
       </div>
       <p>
-        Шесть коротких памяток по темам, которые чаще всего спрашивают на собраниях. Формат PDF, открываются
-        в браузере или на телефоне.
+        {plural(items.length, 'короткая памятка', 'короткие памятки', 'коротких памяток')} по темам, которые чаще
+        всего спрашивают на собраниях. Формат PDF, открываются в браузере или на телефоне.
       </p>
     </div>
 

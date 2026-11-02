@@ -59,6 +59,26 @@
       "color": "terracotta",
       "order": 60,
       "visible": true
+    },
+    {
+      "title": "Как привести ребёнка в ясли без слёз",
+      "category": "Рекомендации",
+      "meta": "Рекомендации • PDF, 0.1 МБ",
+      "file": "./recomendation/Рекомендации - Как привести ребёнка в ясли без слёз.pdf",
+      "icon": "baby",
+      "color": "sage",
+      "order": 70,
+      "visible": true
+    },
+    {
+      "title": "Как приучить ребёнка к горшку",
+      "category": "Рекомендации",
+      "meta": "Рекомендации • PDF, 4.0 МБ",
+      "file": "./recomendation/Рекомендации - Как приучить ребенка к горшку.pdf",
+      "icon": "toilet",
+      "color": "sun",
+      "order": 80,
+      "visible": true
     }
   ]
 }

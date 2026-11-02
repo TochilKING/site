@@ -1,6 +1,9 @@
 ---
 import Icon from './Icon.astro';
-import { base } from '../lib/data';
+import certificates from '../data/certificates.json';
+import { base, plural, visibleDocs, type Doc } from '../lib/data';
+
+const qualified = visibleDocs(certificates.items as Doc[]).length;
 ---
 
 <section class="hero" id="top">
@@ -35,7 +38,7 @@ import { base } from '../lib/data';
           <span>в трёх группах за три года</span>
         </div>
         <div>
-          <strong>21 документ</strong>
+          <strong>{plural(qualified, 'документ', 'документа', 'документов')}</strong>
           <span>о повышении квалификации</span>
         </div>
       </div>

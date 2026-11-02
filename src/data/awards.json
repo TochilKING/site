@@ -55,6 +55,22 @@
       "icon": "leaf",
       "order": 70,
       "visible": true
+    },
+    {
+      "title": "За труд и заботу о детях",
+      "category": "Благодарность",
+      "file": "./awards/Благодарность За труд и заботу о детях.pdf",
+      "icon": "hands-praying",
+      "order": 80,
+      "visible": true
+    },
+    {
+      "title": "Акция «Всемирный день мытья рук — 2025», группа «Светлячки»",
+      "category": "Диплом лауреата",
+      "file": "./awards/Диплом - Гигиена рук всегда важна.png",
+      "icon": "hand-soap",
+      "order": 90,
+      "visible": true
     }
   ]
 }

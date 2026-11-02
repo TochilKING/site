@@ -4,15 +4,7 @@ import diploms from '../data/diploms.json';
 import certificates from '../data/certificates.json';
 import selfEducation from '../data/self-education.json';
 import awards from '../data/awards.json';
-import { asset, visibleDocs, type Doc } from '../lib/data';
-
-const plural = (n: number, one: string, few: string, many: string) => {
-  const mod10 = n % 10;
-  const mod100 = n % 100;
-  if (mod10 === 1 && mod100 !== 11) return `${n} ${one}`;
-  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return `${n} ${few}`;
-  return `${n} ${many}`;
-};
+import { asset, plural, visibleDocs, type Doc } from '../lib/data';
 
 const groups: {
   id: string;
@@ -52,6 +44,8 @@ const groups: {
     items: visibleDocs(awards.items as Doc[]),
   },
 ];
+
+const total = groups.reduce((sum, group) => sum + group.items.length, 0);
 ---
 
 <section class="section" id="documents">
@@ -62,8 +56,8 @@ const groups: {
         <h2>Портфолио: что подтверждено документами</h2>
       </div>
       <p>
-        34 файла: дипломы, сертификаты, отчёты и награды. Каждый открывается в новой вкладке, ничего не нужно
-        скачивать заранее.
+        {plural(total, 'файл', 'файла', 'файлов')}: дипломы, сертификаты, отчёты и награды. Каждый открывается в
+        новой вкладке, ничего не нужно скачивать заранее.
       </p>
     </div>
 
@@ -117,7 +111,7 @@ const groups: {
         {group.limit !== undefined && group.items.length > group.limit && (
           <div class="doc-grid__more">
             <button class="btn btn--ghost" type="button" data-expand={`${group.id}-grid`}>
-              Показать все {group.items.length} {plural(group.items.length, 'документ', 'документа', 'документов')}
+              Показать все {plural(group.items.length, 'документ', 'документа', 'документов')}
               <Icon name="caret-down" size={18} />
             </button>
           </div>

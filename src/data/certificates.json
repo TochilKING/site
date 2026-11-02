@@ -188,6 +188,42 @@
       "color": "sage",
       "order": 210,
       "visible": true
+    },
+    {
+      "title": "Запуск речи через игру",
+      "category": "Сертификат",
+      "file": "./sertificats/Сертификат - Запуск речи через игру.pdf",
+      "icon": "chat-circle-text",
+      "color": "terracotta",
+      "order": 220,
+      "visible": true
+    },
+    {
+      "title": "Как сотрудничать с семьёй: идеи для педагогов",
+      "category": "Сертификат",
+      "file": "./sertificats/Сертификат - Как сотрудничать с семьей.jpg",
+      "icon": "hand-heart",
+      "color": "sage",
+      "order": 230,
+      "visible": true
+    },
+    {
+      "title": "Вебинар журнала «Обруч» и МШЗД",
+      "category": "Сертификат",
+      "file": "./sertificats/Сертификат - МШЗД.pdf",
+      "icon": "globe",
+      "color": "sun",
+      "order": 240,
+      "visible": true
+    },
+    {
+      "title": "Роль привязанности в жизни ребёнка",
+      "category": "Сертификат",
+      "file": "./sertificats/Сертификат - Роль привязанности в жизни ребенка.pdf",
+      "icon": "users-three",
+      "color": "clay",
+      "order": 250,
+      "visible": true
     }
   ]
 }

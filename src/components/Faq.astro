@@ -1,10 +1,23 @@
 ---
 import Icon from './Icon.astro';
+import diploms from '../data/diploms.json';
+import certificates from '../data/certificates.json';
+import selfEducation from '../data/self-education.json';
+import awards from '../data/awards.json';
+import { plural, visibleDocs, type Doc } from '../lib/data';
+
+const count = (items: { items: unknown[] }) => visibleDocs(items.items as Doc[]).length;
+const portfolioSummary = [
+  `${plural(count(diploms), 'документ', 'документа', 'документов')} об образовании`,
+  `${plural(count(certificates), 'сертификат и свидетельство', 'сертификата и свидетельства', 'сертификатов и свидетельств')} о повышении квалификации`,
+  `${plural(count(selfEducation), 'отчёт', 'отчёта', 'отчётов')} по самообразованию`,
+  `${plural(count(awards), 'награда и благодарность', 'награды и благодарности', 'наград и благодарностей')}`,
+].join(', ');
 
 const faq = [
   {
     q: 'Что входит в портфолио',
-    a: 'Три документа об образовании, 21 сертификат и свидетельство о повышении квалификации, три отчёта по самообразованию, семь наград и благодарностей. Все файлы открываются по ссылке, регистрация не нужна.',
+    a: `${portfolioSummary}. Все файлы открываются по ссылке, регистрация не нужна.`,
   },
   {
     q: 'Как читать таблицы мониторинга',
