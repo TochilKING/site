@@ -398,7 +398,7 @@ collections:
               - { label: "1 полугодие, %", name: "firstHalfTotal", widget: "number", value_type: "int", min: 0, max: 100, default: 0 }
               - { label: "2 полугодие, %", name: "secondHalfTotal", widget: "number", value_type: "int", min: 0, max: 100, default: 0 }
               - { label: "Название сводной таблицы", name: "title1", widget: "string" }
-              - { label: "Подпись сводной таблицы", name: "size1", widget: "string", default: "Сводная таблица, DOCX" }
+              - { label: "Подпись сводной таблицы", name: "size1", widget: "string", default: "Сводная таблица, PDF" }
               - label: "Файл сводной таблицы"
                 name: "href1"
                 widget: "file"
@@ -409,7 +409,7 @@ collections:
                   config:
                     max_file_size: 10485760
               - { label: "Название аналитической справки", name: "title2", widget: "string" }
-              - { label: "Подпись аналитической справки", name: "size2", widget: "string", default: "Выводы и рекомендации, DOCX" }
+              - { label: "Подпись аналитической справки", name: "size2", widget: "string", default: "Выводы и рекомендации, PDF" }
               - label: "Файл аналитической справки"
                 name: "href2"
                 widget: "file"
