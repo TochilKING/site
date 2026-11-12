@@ -311,6 +311,28 @@ collections:
                   config:
                     max_file_size: 10485760
 
+      - label: "Достижения воспитанников"
+        name: "pupil_achievements"
+        file: "src/data/pupil-achievements.json"
+        format: "json"
+        fields:
+          - label: "Достижения"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Показывать на сайте", name: "visible", widget: "boolean", default: true }
+              - { label: "Порядок", name: "order", widget: "number", value_type: "int", default: 10 }
+              - { label: "Название", name: "title", widget: "string" }
+              - { label: "Категория", name: "category", widget: "string", default: "Достижения воспитанников" }
+              - { label: "Иконка", name: "icon", widget: "select", default: "medal", options: ["medal", "trophy", "file-text"] }
+              - label: "Обезличенный файл"
+                name: "file"
+                widget: "file"
+                media_folder: "public/pupil-achievements"
+                public_folder: "/pupil-achievements"
+                choose_url: false
+
       - label: "Рекомендации для родителей"
         name: "recommendations"
         file: "src/data/recommendations.json"

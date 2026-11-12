@@ -4,6 +4,7 @@ import diploms from '../data/diploms.json';
 import certificates from '../data/certificates.json';
 import selfEducation from '../data/self-education.json';
 import awards from '../data/awards.json';
+import pupilAchievements from '../data/pupil-achievements.json';
 import { asset, plural, visibleDocs, type Doc } from '../lib/data';
 
 const groups: {
@@ -43,6 +44,14 @@ const groups: {
     count: plural(visibleDocs(awards.items as Doc[]).length, 'документ', 'документа', 'документов'),
     items: visibleDocs(awards.items as Doc[]),
   },
+  {
+    id: 'pupil-achievements',
+    title: 'Достижения воспитанников',
+    icon: 'trophy',
+    count: plural(visibleDocs(pupilAchievements.items as Doc[]).length, 'документ', 'документа', 'документов'),
+    items: visibleDocs(pupilAchievements.items as Doc[]),
+    limit: 6,
+  },
 ];
 
 const total = groups.reduce((sum, group) => sum + group.items.length, 0);
@@ -56,7 +65,7 @@ const total = groups.reduce((sum, group) => sum + group.items.length, 0);
         <h2>Портфолио: что подтверждено документами</h2>
       </div>
       <p>
-        {plural(total, 'файл', 'файла', 'файлов')}: дипломы, сертификаты, отчёты и награды. Каждый открывается в
+        {plural(total, 'файл', 'файла', 'файлов')}: дипломы, сертификаты, отчёты и достижения. Каждый открывается в
         новой вкладке, ничего не нужно скачивать заранее.
       </p>
     </div>

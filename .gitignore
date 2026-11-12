@@ -5,3 +5,6 @@ dist/
 Thumbs.db
 # исходники DOCX держим локально: публикуются только PDF из public/
 sources-docx/
+
+# Локальные оригиналы достижений воспитанников; публикуются обезличенные копии.
+public/achievements of pupils/

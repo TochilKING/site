@@ -1,0 +1,100 @@
+{
+  "items": [
+    {
+      "title": "Грамота за участие в конкурсе осенних поделок №02",
+      "category": "Достижения воспитанников",
+      "file": "./pupil-achievements/award-02.pdf",
+      "icon": "medal",
+      "order": 20,
+      "visible": true
+    },
+    {
+      "title": "Грамота за участие в конкурсе осенних поделок №01",
+      "category": "Достижения воспитанников",
+      "file": "./pupil-achievements/award-01.pdf",
+      "icon": "medal",
+      "order": 10,
+      "visible": true
+    },
+    {
+      "title": "Грамота за участие в конкурсе осенних поделок №03",
+      "category": "Достижения воспитанников",
+      "file": "./pupil-achievements/award-03.pdf",
+      "icon": "medal",
+      "order": 30,
+      "visible": true
+    },
+    {
+      "title": "Грамота за участие в конкурсе осенних поделок №04",
+      "category": "Достижения воспитанников",
+      "file": "./pupil-achievements/award-04.pdf",
+      "icon": "medal",
+      "order": 40,
+      "visible": true
+    },
+    {
+      "title": "Дипломы конкурса «Сказочная русская осень»",
+      "category": "Достижения воспитанников",
+      "file": "./pupil-achievements/award-05.pdf",
+      "icon": "trophy",
+      "order": 50,
+      "visible": true
+    },
+    {
+      "title": "Грамота за участие в конкурсе осенних поделок №06",
+      "category": "Достижения воспитанников",
+      "file": "./pupil-achievements/award-06.pdf",
+      "icon": "medal",
+      "order": 60,
+      "visible": true
+    },
+    {
+      "title": "Грамота за участие в конкурсе осенних поделок №07",
+      "category": "Достижения воспитанников",
+      "file": "./pupil-achievements/award-07.pdf",
+      "icon": "medal",
+      "order": 70,
+      "visible": true
+    },
+    {
+      "title": "Грамота за участие в конкурсе осенних поделок №08",
+      "category": "Достижения воспитанников",
+      "file": "./pupil-achievements/award-08.pdf",
+      "icon": "medal",
+      "order": 80,
+      "visible": true
+    },
+    {
+      "title": "Грамота за участие в конкурсе осенних поделок №09",
+      "category": "Достижения воспитанников",
+      "file": "./pupil-achievements/award-09.pdf",
+      "icon": "medal",
+      "order": 90,
+      "visible": true
+    },
+    {
+      "title": "Грамота за участие в конкурсе осенних поделок №10",
+      "category": "Достижения воспитанников",
+      "file": "./pupil-achievements/award-10.pdf",
+      "icon": "medal",
+      "order": 100,
+      "visible": true
+    },
+    {
+      "title": "Грамота за участие в конкурсе осенних поделок №11",
+      "category": "Достижения воспитанников",
+      "file": "./pupil-achievements/award-11.pdf",
+      "icon": "medal",
+      "order": 110,
+      "visible": true
+    },
+    {
+      "title": "Грамота за участие в конкурсе осенних поделок №12",
+      "category": "Достижения воспитанников",
+      "file": "./pupil-achievements/award-12.pdf",
+      "icon": "medal",
+      "order": 120,
+      "visible": true
+    }
+  ]
+}

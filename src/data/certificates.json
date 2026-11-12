@@ -224,6 +224,15 @@
       "color": "clay",
       "order": 250,
       "visible": true
+    },
+    {
+      "title": "Запуск речи через игру — Международный центр образования и педагогики",
+      "category": "Сертификат",
+      "file": "./sertificats/Сертификат - Международная школа завтрашнего дня.pdf",
+      "icon": "chat-circle-text",
+      "color": "sage",
+      "order": 260,
+      "visible": true
     }
   ]
 }

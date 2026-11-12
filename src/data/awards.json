@@ -71,6 +71,22 @@
       "icon": "hand-soap",
       "order": 90,
       "visible": true
+    },
+    {
+      "title": "Всемирный день мытья рук",
+      "category": "Диплом",
+      "file": "./awards/Диплом - Всемирный день мытья рук.pdf",
+      "icon": "hand-soap",
+      "order": 100,
+      "visible": true
+    },
+    {
+      "title": "Осенний флорариум",
+      "category": "Диплом",
+      "file": "./awards/Диплом - Осенний флорариум.pdf",
+      "icon": "plant",
+      "order": 110,
+      "visible": true
     }
   ]
 }
