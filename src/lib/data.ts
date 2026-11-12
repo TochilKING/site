@@ -4,6 +4,7 @@ export type Doc = {
   description?: string;
   meta?: string;
   file: string;
+  thumbnail?: string;
   icon?: string;
   color?: string;
   order?: number;

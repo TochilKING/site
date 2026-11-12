@@ -782,6 +782,18 @@
     transform var(--dur-300) var(--ease);
 }
 
+.doc--thumbnail {
+  padding: var(--s-100);
+  overflow: hidden;
+}
+
+.doc--thumbnail img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--r-2xl);
+}
+
 .doc:hover {
   border-color: var(--line-2);
   transform: translateY(-2px);

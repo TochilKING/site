@@ -89,29 +89,35 @@ const total = groups.reduce((sum, group) => sum + group.items.length, 0);
         <div class="doc-grid" id={`${group.id}-grid`}>
           {group.items.map((item, index) => (
             <a
-              class={`doc${group.id === 'reports' ? ' doc--report' : ''}`}
+              class={`doc${group.id === 'reports' ? ' doc--report' : ''}${item.thumbnail ? ' doc--thumbnail' : ''}`}
               href={asset(item.file)}
               target="_blank"
               rel="noopener"
               hidden={group.limit !== undefined && index >= group.limit}
             >
-              <div class="doc__top">
-                <Icon name={item.icon ?? 'file-text'} size={22} />
-                <span class="doc__cat">{item.category}</span>
-              </div>
-              <h4>{item.title}</h4>
-              {item.description && <p>{item.description}</p>}
-              {item.points && (
-                <ul class="doc__points">
-                  {item.points.map((point) => (
-                    <li>{point}</li>
-                  ))}
-                </ul>
+              {item.thumbnail ? (
+                <img src={asset(item.thumbnail)} alt={item.title} loading="lazy" />
+              ) : (
+                <>
+                  <div class="doc__top">
+                    <Icon name={item.icon ?? 'file-text'} size={22} />
+                    <span class="doc__cat">{item.category}</span>
+                  </div>
+                  <h4>{item.title}</h4>
+                  {item.description && <p>{item.description}</p>}
+                  {item.points && (
+                    <ul class="doc__points">
+                      {item.points.map((point) => (
+                        <li>{point}</li>
+                      ))}
+                    </ul>
+                  )}
+                  <span class="doc__meta">
+                    {(item.meta ?? 'Открыть документ').replace(/\s*→\s*$/, '')}
+                    <Icon name="arrow-up-right" size={14} />
+                  </span>
+                </>
               )}
-              <span class="doc__meta">
-                {(item.meta ?? 'Открыть документ').replace(/\s*→\s*$/, '')}
-                <Icon name="arrow-up-right" size={14} />
-              </span>
             </a>
           ))}
         </div>

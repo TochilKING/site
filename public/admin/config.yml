@@ -326,12 +326,18 @@ collections:
               - { label: "Название", name: "title", widget: "string" }
               - { label: "Категория", name: "category", widget: "string", default: "Достижения воспитанников" }
               - { label: "Иконка", name: "icon", widget: "select", default: "medal", options: ["medal", "trophy", "file-text"] }
-              - label: "Обезличенный файл"
+              - label: "Файл грамоты или диплома"
                 name: "file"
                 widget: "file"
                 media_folder: "public/pupil-achievements"
                 public_folder: "/pupil-achievements"
                 choose_url: false
+              - label: "Миниатюра грамоты"
+                name: "thumbnail"
+                widget: "image"
+                required: false
+                media_folder: "public/pupil-achievements"
+                public_folder: "/pupil-achievements"
 
       - label: "Рекомендации для родителей"
         name: "recommendations"
